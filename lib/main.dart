@@ -4,10 +4,6 @@ import './widgets/new_transactions.dart';
 import '../models/transaction.dart';
 import './widgets/transaction_list.dart';
 
-// import './widgets/transaction_list.dart';
-// import './widgets/new_transactions.dart';
-// import '../models/transaction.dart';
-
 void main() {
   runApp(MyApp());
 }
@@ -16,7 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter App',
+      title: 'Personal Expences',
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+        accentColor: Colors.amber,
+        fontFamily: 'QuickSand',
+      ),
       home: MyHomePage(),
     );
   }
@@ -64,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter App'),
+        title: Text('Personal Expenses'),
         actions: <Widget>[
           IconButton(
             onPressed: () => _startAddNewTransaction(context),

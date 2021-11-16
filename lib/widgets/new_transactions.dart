@@ -13,7 +13,7 @@ class NewTransactions extends StatefulWidget {
 class _NewTransactionsState extends State<NewTransactions> {
   final _titleController = TextEditingController();
   final _amountController = TextEditingController();
-  DateTime _selectedDtate = DateTime.now();
+  DateTime? _selectedDtate;
 
   void _submitData() {
     final enteredTitle = _titleController.text;
@@ -74,8 +74,8 @@ class _NewTransactionsState extends State<NewTransactions> {
                   Expanded(
                     child: Text(
                       _selectedDtate == null
-                          ? 'No Dtate Chosen'
-                          : DateFormat.yMd().format(_selectedDtate),
+                          ? 'No Date Chosen'
+                          : 'Picked Date: ${DateFormat.yMd().format(_selectedDtate!)}',
                     ),
                   ),
                   FlatButton(
